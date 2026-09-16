@@ -1,65 +1,229 @@
 # File Automation Tool
 
-A Python CLI tool for **sorting**, **renaming**, and **cleaning** files in a folder — built with the `os` module, full exception handling, operation logging, and an interactive menu.
+A simple Python automation tool for **sorting, renaming, and cleaning files** in a folder.
 
-## Files
-- `file_automation.py` — the script (run with `python3 file_automation.py`)
-- `sample_output.log` — example log generated from a real run (see below)
+The project uses the `os` module, exception handling, logging, and user input to perform common file-management tasks automatically.
 
 ## Features
-| Feature | How it's met |
-|---|---|
-| `os` module | `os.listdir`, `os.path.*`, `os.makedirs`, `os.rename`, `os.remove`, `os.rmdir`, `os.walk` |
-| Exception handling | Every filesystem call wrapped in `try/except OSError` (+ a top-level safety net and `KeyboardInterrupt` handling) |
-| Logging | Python `logging` module writes timestamped logs to both console and `file_automation.log` |
-| User input | Interactive menu (`input()`) — choose operation, target folder, rename prefix |
 
-## Menu Options
-1. **Sort** — moves files into sub-folders named `<EXT>_files/` based on extension
-2. **Rename** — batch renames files to `<prefix>_001.ext`, `<prefix>_002.ext`, ...
-3. **Clean** — deletes junk files (`.tmp`, `.bak`, `.cache`, `.DS_Store`) and removes empty sub-folders
-4. **Exit**
+* **Sort Files** — Organizes files into folders according to their file extensions.
+* **Rename Files** — Renames multiple files using a prefix and sequence number.
+* **Clean Files** — Removes junk files such as `.tmp`, `.bak`, `.cache`, and `.DS_Store`, and removes empty folders.
+* **Exception Handling** — Handles file and folder errors safely.
+* **Logging** — Records file operations in a log file.
+* **User Input** — Allows the user to select an operation and enter a folder path.
+
+## Requirements
+
+* Python 3
+* No external Python libraries are required.
+
+## Project Structure
+
+```text
+python_file_automation/
+│
+├── file_automation.py
+├── README.md
+├── sample_output.log
+│
+├── sample_files/
+│   ├── photo.jpg
+│   ├── document.pdf
+│   ├── notes.txt
+│   ├── data.csv
+│   ├── program.py
+│   ├── song.mp3
+│   ├── temp.tmp
+│   └── backup.bak
+│
+├── rename_test/
+│   ├── apple.txt
+│   ├── mango.txt
+│   └── orange.txt
+│
+└── clean_test/
+    ├── keep.txt
+    ├── temp.tmp
+    ├── backup.bak
+    └── empty_folder/
+```
 
 ## How to Run
+
+Open Terminal and go to the project folder:
+
+```bash
+cd python_file_automation
+```
+
+Run the program:
+
 ```bash
 python3 file_automation.py
 ```
 
----
+## Menu
 
-## Sample Input / Output
+```text
+=============================================
+       FILE AUTOMATION TOOL
+=============================================
 
-### Starting folder: `sample_files/`
-```
-report.PDF   photo1.JPG   photo2.jpg   notes.txt   archive.zip
-data.csv     temp.tmp     backup.bak   script.py   image.png
-```
-
-### Sample interactive session (Sort)
-```
-=======================================================
- FILE AUTOMATION TOOL
- Sort | Rename | Clean  -- with logging
-=======================================================
-
-What would you like to do?
-  1) Sort files into folders by extension
-  2) Batch rename files
-  3) Clean junk files & empty folders
-  4) Exit
-Enter choice (1-4): 1
-Enter the target folder path: sample_files
-
-Done. See 'file_automation.log' for the full operation log.
+Choose an operation:
+1. Sort Files
+2. Rename Files
+3. Clean Files
+4. Exit
 ```
 
-### Resulting folder structure
+## 1. Sort Files
+
+Select:
+
+```text
+1
 ```
+
+Then enter:
+
+```text
+sample_files
+```
+
+The program organizes files according to their extensions.
+
+Example:
+
+```text
 sample_files/
-├── PDF_files/report.PDF
-├── JPG_files/photo1.JPG, photo2.jpg
-├── BAK_files/backup.bak
-├── ZIP_files/archive.zip
+├── JPG_files/
+│   └── photo.jpg
+├── PDF_files/
+│   └── document.pdf
+├── TXT_files/
+│   └── notes.txt
+├── CSV_files/
+│   └── data.csv
+├── PY_files/
+│   └── program.py
+├── MP3_files/
+│   └── song.mp3
+├── TMP_files/
+│   └── temp.tmp
+└── BAK_files/
+    └── backup.bak
+```
+
+## 2. Rename Files
+
+Select:
+
+```text
+2
+```
+
+Then enter the folder:
+
+```text
+rename_test
+```
+
+Enter a prefix:
+
+```text
+fruit
+```
+
+Example output:
+
+```text
+Renamed: apple.txt -> fruit_001.txt
+Renamed: mango.txt -> fruit_002.txt
+Renamed: orange.txt -> fruit_003.txt
+```
+
+## 3. Clean Files
+
+Select:
+
+```text
+3
+```
+
+Then enter:
+
+```text
+clean_test
+```
+
+The program removes junk files and empty folders.
+
+Example:
+
+```text
+Deleted: temp.tmp
+Deleted: backup.bak
+Removed empty folder: empty_folder
+Cleaning completed. Files deleted: 2
+```
+
+## Logging
+
+The program automatically creates:
+
+```text
+file_automation.log
+```
+
+The log records operations such as:
+
+```text
+2026-09-16 20:15:04 | INFO | === New session started ===
+2026-09-16 20:15:04 | INFO | Starting SORT operation
+2026-09-16 20:15:04 | INFO | Moved photo.jpg -> JPG_files/
+2026-09-16 20:15:04 | INFO | Moved document.pdf -> PDF_files/
+2026-09-16 20:15:04 | INFO | SORT operation completed
+```
+
+A sample log is included in the repository as:
+
+```text
+sample_output.log
+```
+
+## Assignment Requirements
+
+| Requirement        | Implementation                                                       |
+| ------------------ | -------------------------------------------------------------------- |
+| OS Module          | `os.listdir()`, `os.path`, `os.rename()`, `os.remove()`, `os.walk()` |
+| Exception Handling | `try` / `except` blocks for file operations                          |
+| Logging            | Python `logging` module                                              |
+| User Input         | `input()` for menu, folder path, and rename prefix                   |
+| File Operations    | Sorting, renaming, and cleaning                                      |
+
+## Sample Input
+
+```text
+Enter choice (1-4): 1
+Enter folder path: sample_files
+```
+
+## Sample Output
+
+```text
+--- Sorting Files ---
+Moved: photo.jpg -> JPG_files/
+Moved: document.pdf -> PDF_files/
+Moved: notes.txt -> TXT_files/
+Sorting completed.
+```
+
+## Author
+
+**Md Farhan Khan**
+
+Python File Automation Project
 ├── CSV_files/data.csv
 ├── TXT_files/notes.txt
 ├── PY_files/script.py
