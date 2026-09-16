@@ -1,0 +1,26 @@
+2026-09-16 20:54:25,791 | INFO | === New session started ===
+2026-09-16 21:00:21,516 | INFO | Starting RENAME operation with prefix: python -u "/Users/mdfarhankhan/Downloads/files-4/file_automation.py"
+2026-09-16 21:00:21,518 | ERROR | Error renaming file_automation.log: [Errno 2] No such file or directory: '/Users/mdfarhankhan/Downloads/files-4/file_automation.log' -> '/Users/mdfarhankhan/Downloads/files-4/python -u "/Users/mdfarhankhan/Downloads/files-4/file_automation.py"_001.log'
+2026-09-16 21:00:21,518 | ERROR | Error renaming file_automation.py: [Errno 2] No such file or directory: '/Users/mdfarhankhan/Downloads/files-4/file_automation.py' -> '/Users/mdfarhankhan/Downloads/files-4/python -u "/Users/mdfarhankhan/Downloads/files-4/file_automation.py"_002.py'
+2026-09-16 21:00:21,518 | ERROR | Error renaming README.md: [Errno 2] No such file or directory: '/Users/mdfarhankhan/Downloads/files-4/README.md' -> '/Users/mdfarhankhan/Downloads/files-4/python -u "/Users/mdfarhankhan/Downloads/files-4/file_automation.py"_003.md'
+2026-09-16 21:00:21,518 | ERROR | Error renaming sample_output.log: [Errno 2] No such file or directory: '/Users/mdfarhankhan/Downloads/files-4/sample_output.log' -> '/Users/mdfarhankhan/Downloads/files-4/python -u "/Users/mdfarhankhan/Downloads/files-4/file_automation.py"_004.log'
+2026-09-16 21:00:21,518 | INFO | RENAME operation completed
+2026-09-16 21:00:37,183 | INFO | Starting SORT operation
+2026-09-16 21:00:37,185 | INFO | Moved document.pdf -> PDF_files/
+2026-09-16 21:00:37,185 | INFO | Moved temp.tmp -> TMP_files/
+2026-09-16 21:00:37,186 | INFO | Moved note.txt -> TXT_files/
+2026-09-16 21:00:37,186 | INFO | Moved data.csv -> CSV_files/
+2026-09-16 21:00:37,187 | INFO | Moved photo.jpg -> JPG_files/
+2026-09-16 21:00:37,187 | INFO | Moved program.py -> PY_files/
+2026-09-16 21:00:37,188 | INFO | Moved song.mp3 -> MP3_files/
+2026-09-16 21:00:37,188 | INFO | SORT operation completed
+2026-09-16 21:02:47,412 | INFO | Starting RENAME operation with prefix: fruit
+2026-09-16 21:02:47,414 | INFO | Renamed mango.txt -> fruit_001.txt
+2026-09-16 21:02:47,414 | INFO | Renamed apple.txt -> fruit_002.txt
+2026-09-16 21:02:47,415 | INFO | Renamed orange.txt -> fruit_003.txt
+2026-09-16 21:02:47,415 | INFO | RENAME operation completed
+2026-09-16 21:04:46,395 | INFO | Starting CLEAN operation
+2026-09-16 21:04:46,397 | INFO | Deleted junk file: backup.bak
+2026-09-16 21:04:46,397 | INFO | Deleted junk file: temp.tmp
+2026-09-16 21:04:46,398 | INFO | Removed empty folder: empty_folder
+2026-09-16 21:04:46,398 | INFO | CLEAN operation completed. Files deleted: 2

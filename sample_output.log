@@ -1,0 +1,7 @@
+2026-09-16 15:13:04,883 | INFO     | === New session started ===
+2026-09-16 15:13:04,884 | INFO     | Starting CLEAN operation in: /home/claude/demo/clean_test
+2026-09-16 15:13:04,884 | INFO     | Deleted junk file: junk1.tmp
+2026-09-16 15:13:04,884 | INFO     | Deleted junk file: junk2.bak
+2026-09-16 15:13:04,884 | INFO     | Removed empty folder: empty_sub
+2026-09-16 15:13:04,884 | INFO     | CLEAN complete. Files deleted: 2, Empty folders removed: 1, Failed: 0
+2026-09-16 15:13:04,884 | INFO     | === Session ended by user ===
